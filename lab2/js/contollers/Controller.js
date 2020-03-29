@@ -6,6 +6,7 @@ const OPERATION_DIV = '/';
 const OPERATION_POW = '^';
 const OPERATION_MUL = '*';
 const OPERATION_BIN = 'B';
+const OPERATION_DEC = 'D';
 
 export default class Controller {
     constructor(controlsView, historyListView, historyListModel) {
@@ -20,6 +21,7 @@ export default class Controller {
         controlsView.setOnPowCallback(this.onPowItem);
         controlsView.setOnMulCallback(this.onMultItem);
         controlsView.setOnBinCallback(this.onBin);
+        controlsView.setOnDecCallback(this.onDec);
         this.worker.onmessage = this.onMessageRecieved;
     }
 
@@ -61,6 +63,10 @@ export default class Controller {
 
     onBin = (number1) => {
         this.worker.postMessage({"number1": number1, "number2": "", "operation": OPERATION_BIN});
+    }
+
+    onDec = (number1) => {
+        this.worker.postMessage({"number1": number1, "number2": "", "operation": OPERATION_DEC});
     }
 
     notifyDataSetChanged = () => {

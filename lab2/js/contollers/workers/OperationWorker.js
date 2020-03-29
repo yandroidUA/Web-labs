@@ -25,6 +25,9 @@ onmessage = function(message) {
     if (operation == 'B') {
         this.postMessage({"number1": number1, "number2": "", "operation": operation, "result": (number1).toString(2), "error": undefined});
     }
+    if (operation == 'D') {
+        this.postMessage({"number1": number1, "number2": "", "operation": operation, "result": parseInt(number1, 2), "error": undefined});
+    }
 }
 
 // export { OPERATION_PLUS, OPERATION_MINUS, OPERATION_DIV, OPERATION_POW, OPERATION_MUL, OPERATION_BIN };

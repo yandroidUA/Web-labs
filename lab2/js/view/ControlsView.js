@@ -6,6 +6,7 @@ export default class ControlsView {
         this.controllerOnDiv = null;
         this.controllerOnPow = null;
         this.controllerOnBin = null;
+        this.controllerOnDec = null;
         document.querySelector("#control-buttons").addEventListener('click', (event) => this.onClick(event));
     }
 
@@ -48,6 +49,11 @@ export default class ControlsView {
             if (number1["error"]) return;
             this.controllerOnBin(number1["number"]);
         }
+        if (targerId == 'dec-number') {
+            const number1 = this.checkNumberOne();
+            if (number1["error"]) return;
+            this.controllerOnDec(number1["number"]);
+        }
     }
 
     setOnAddCallback(addCallback) {
@@ -72,6 +78,10 @@ export default class ControlsView {
 
     setOnBinCallback(binCallback) {
         this.controllerOnBin = binCallback;
+    }
+
+    setOnDecCallback(decCallback) {
+        this.controllerOnDec = decCallback;
     }
 
     displayError = (messgae) => {
