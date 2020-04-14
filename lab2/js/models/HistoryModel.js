@@ -5,5 +5,4 @@ export default class HistoryModel {
         this.operation = operation;
         this.result = result;
     }
-
 }

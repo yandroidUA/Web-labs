@@ -13,7 +13,7 @@ export default class Controller {
         this.controlsView = controlsView;
         this.historyListView = historyListView;
         this.historyListModel = historyListModel;
-        this.worker = new Worker("js/contollers/workers/OperationWorker.js");
+        this.worker = new Worker("js/contollers/workers/OperationWorker.js", { type: "module" });
         historyListModel.setOnAddItemCallback(this.notifyDataSetChanged);
         controlsView.setOnAddCallback(this.onAddItem);
         controlsView.setOnMinusCallback(this.onMinusItem);

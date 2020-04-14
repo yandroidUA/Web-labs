@@ -1,7 +1,16 @@
+// importScripts('./../../models/HistoryModel.js');
+import HistoryModel from './../../models/HistoryModel.js'
+
 onmessage = function(message) {
     const number1 = message.data["number1"];
     const number2 = message.data["number2"];
     const operation = message.data["operation"];
+    const operationsObject = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => a / b
+    }
 
     if (operation == '+') {
         this.postMessage({"number1": number1, "number2": number2, "operation": operation, "result": number1 + number2, "error": undefined});
