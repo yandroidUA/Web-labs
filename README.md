@@ -1,5 +1,4 @@
 # Web-labs
 
-<h3> LAB2 screenshots and gifs </h3>
-
-![](/lab2/gif/work.gif)
+<h2>Author Andrii Yanechko</h2>
+<p>KPI, FAM, WEB labs</p>
