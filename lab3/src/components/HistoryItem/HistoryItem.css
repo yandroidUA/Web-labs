@@ -1,0 +1,9 @@
+.wrong-statement {
+    background-color: rgba(255, 0, 0, 0.3);
+    border-color: red;
+}
+
+.success-statement {
+    background-color: rgba(0, 255, 0, 0.3);
+    border-color: green;
+}
