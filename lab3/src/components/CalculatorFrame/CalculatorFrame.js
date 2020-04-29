@@ -40,13 +40,13 @@ export default class CallculatorFrame extends React.Component {
     }
 
     calculateBin = (number) => {
-        const num = Number(number);
+        const num = parseInt(number);
         if (isNaN(num)) {
             console.log("ERROR! Number expected, but got " + num);
             return NaN;
         }
 
-        return number.toString(2);
+        return num.toString(2);
     }
 
     calculateOperation = (num1, num2, operation) => {
@@ -129,7 +129,6 @@ export default class CallculatorFrame extends React.Component {
         }
 
         consoleText += this.state.number2;
-        console.log(this.state.history);
         return (
             <div>
                 <div className="calculator-panel">
